@@ -7,6 +7,14 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="602" Width="389">
     <Window.Resources>
+        <LinearGradientBrush x:Key="Flat3DBorderBrush"
+                         StartPoint="0.499,0" EndPoint="0.501,1">
+            <GradientStop Color="Gray" Offset="0" />
+            <GradientStop Color="Gray" Offset="0.99" />
+            <GradientStop Color="#DDD" Offset="0.01" />
+            <GradientStop Color="Gray" Offset="1" />
+        </LinearGradientBrush>
+        
         <Style x:Key="DigitButtonStyle" TargetType="Button">
             <Setter Property="Control.FontFamily" Value="Verdana" />
             <Setter Property="Control.Background" Value="Gray" />
@@ -187,14 +195,22 @@
                 Content="C"
                 Grid.Row="5" 
                 Style="{StaticResource ResetButtonStyle}"/>
+        <Border
+
+          BorderBrush="{StaticResource Flat3DBorderBrush}"
+          BorderThickness="10" Background="White"
+            Grid.Column="0"
+            Grid.ColumnSpan="4"
+            Grid.Row="0">
+
         <Label x:Name="answerValueLabel" 
                 Content=""
                 Grid.Row="0"
                 Grid.Column="0"
                 Grid.ColumnSpan="4" 
                 FontFamily="DSEG7 Classic" 
-                FontStretch="Expanded" FontStyle="{Binding VerticalAlignment, ElementName=answerValueLabel}" HorizontalAlignment="Right"/>
-
+                FontStretch="Expanded" FontStyle="{Binding VerticalAlignment, ElementName=answerValueLabel}" HorizontalAlignment="Right" FontSize="24"/>
+        </Border>
 
     </Grid>
 </Window>
