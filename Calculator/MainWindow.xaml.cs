@@ -39,33 +39,66 @@ namespace Calculator
 
         private void EqualOperationButton_Click(object sender, RoutedEventArgs e)
         {
-                var values = calculateString.Split(' ');
-            switch (values[1])
+            if (calculateString != string.Empty)
             {
-                case "+": calculateString += $" = {Int32.Parse(values[0]) + Int32.Parse(values[2])}"; break;
-                case "-": calculateString += $" = {Int32.Parse(values[0]) - Int32.Parse(values[2])}"; break;
-                case "x": calculateString += $" = {Int32.Parse(values[0]) * Int32.Parse(values[2])}"; break;
-                case "/": calculateString += $" = {Int32.Parse(values[0]) / Int32.Parse(values[2])}"; break;
-            }
+                var values = calculateString.Split(' ');
+                switch (values[1])
+                {
+                    case "+": calculateString += $" = {Int32.Parse(values[0]) + Int32.Parse(values[2])}"; break;
+                    case "-": calculateString += $" = {Int32.Parse(values[0]) - Int32.Parse(values[2])}"; break;
+                    case "x": calculateString += $" = {Int32.Parse(values[0]) * Int32.Parse(values[2])}"; break;
+                    case "/":
+                        {
+                            if (Int32.Parse(values[2]) != 0)
+                            {
+                                calculateString += $" = {Int32.Parse(values[0]) / Int32.Parse(values[2])}";
+                            }
+                            else
+                            {
+                                calculateString = values[0] + " / ";
+                                MessageBox.Show("На ноль делить нельзя!");
+                            }
+                            break;
+                        }
+                        
 
-            answerValueLabel.Content = calculateString;
-            calculateString = string.Empty;
+                }
+
+                answerValueLabel.Content = calculateString;
+
+                if (Int32.Parse(values[2]) != 0)
+                {
+                    calculateString = string.Empty;
+                }
+            }
         }
 
         private void OperationButtons_Click(object sender, RoutedEventArgs e)
         {
+            var operationButton = (Button)e.Source;
+            var operationButtonContent = operationButton.Content;
+            var inputData = calculateString.Split(' ');
+
             if (calculateString != string.Empty)
             {
-                var operationButton = (Button)e.Source;
-                calculateString += " " + operationButton.Content + " ";
+                if (inputData.Length == 1)
+                {
+                    calculateString += " " + operationButtonContent + " ";
+                }
+                else {
+                    calculateString = inputData[0] + " " + operationButtonContent + " ";
+                }
             }
+            else {
+                     if ((string)operationButtonContent == "-") calculateString += "-";
+                 }
             answerValueLabel.Content = calculateString;
         }
 
         private void DigitButton_Click(object sender, RoutedEventArgs e)
         {
             var sourceButton = (Button)e.Source;
-            calculateString += sourceButton.Content;//"1";
+            calculateString += sourceButton.Content;
             answerValueLabel.Content = calculateString;
         }
     }
