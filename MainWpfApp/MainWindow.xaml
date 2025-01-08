@@ -26,7 +26,7 @@
             Content="Выйти"
             />
         <Button 
-            x:FieldModifier="SignIn_Button"
+            x:Name="SignIn_Button"
             Grid.Column="2"
             Grid.Row="1"
             Content="Войти"

@@ -19,3 +19,7 @@ D:\education\CSharp\PRO_CSharp.WPF\PRO-C-.WPF\MainWpfApp\obj\Debug\net8.0-window
 D:\education\CSharp\PRO_CSharp.WPF\PRO-C-.WPF\MainWpfApp\obj\Debug\net8.0-windows\MainWpfApp.pdb
 D:\education\CSharp\PRO_CSharp.WPF\PRO-C-.WPF\MainWpfApp\obj\Debug\net8.0-windows\MainWpfApp.genruntimeconfig.cache
 D:\education\CSharp\PRO_CSharp.WPF\PRO-C-.WPF\MainWpfApp\obj\Debug\net8.0-windows\ref\MainWpfApp.dll
+D:\education\CSharp\PRO_CSharp.WPF\PRO-C-.WPF\MainWpfApp\obj\Debug\net8.0-windows\AuthorizationWindow.g.cs
+D:\education\CSharp\PRO_CSharp.WPF\PRO-C-.WPF\MainWpfApp\obj\Debug\net8.0-windows\RegistrationWindow.g.cs
+D:\education\CSharp\PRO_CSharp.WPF\PRO-C-.WPF\MainWpfApp\obj\Debug\net8.0-windows\AuthorizationWindow.baml
+D:\education\CSharp\PRO_CSharp.WPF\PRO-C-.WPF\MainWpfApp\obj\Debug\net8.0-windows\RegistrationWindow.baml

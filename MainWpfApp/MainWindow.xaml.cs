@@ -19,6 +19,20 @@ namespace MainWpfApp
         public MainWindow()
         {
             InitializeComponent();
+            SignIn_Button.Click += SignIn_Button_Click;
+            Registration_Button.Click += Registration_Button_Click;
+        }
+
+        private void Registration_Button_Click(object sender, RoutedEventArgs e)
+        {
+            var registration = new RegistrationWindow();
+            registration.Show();
+        }
+
+        private void SignIn_Button_Click(object sender, RoutedEventArgs e)
+        {
+            var authorization = new AuthorizationWindow();
+            authorization.Show();
         }
     }
 }
