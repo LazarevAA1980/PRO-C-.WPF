@@ -22,6 +22,25 @@ namespace MainWpfApp
         public AuthorizationWindow()
         {
             InitializeComponent();
+            Authorization_Button.Click += Authorization_Button_Click;
+        }
+
+        private void Authorization_Button_Click(object sender, RoutedEventArgs e)
+        {
+            if (Password_TextBox.Text == string.Empty || Login_TextBox.Text == string.Empty)
+            {
+                MessageBox.Show("Поле Логин и (или) Пароль не могут быть пустыми!");
+                return;
+            }
+            else {
+                if (Password_TextBox.Text.Contains(' ') || Login_TextBox.Text.Contains(" "))
+                {
+                    MessageBox.Show("В полях Логин и (или) Пароль не могут быть пробелы!");
+                    return;
+                }
+            }
+
+
         }
     }
 }
