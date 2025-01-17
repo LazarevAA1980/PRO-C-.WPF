@@ -1,0 +1,8 @@
+is_global = true
+build_property.RootNamespace = MainWpfApp
+build_property.ProjectDir = D:\education\CSharp\PRO_CSharp.WPF\PRO-C-.WPF\MainWpfApp\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.CsWinRTUseWindowsUIXamlProjections = false
+build_property.EffectiveAnalysisLevelStyle = 
+build_property.EnableCodeStyleSeverity = 

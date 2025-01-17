@@ -33,7 +33,7 @@ namespace MainWpfApp
                 return;
             }
             else {
-                if (Password_TextBox.Text.Contains(' ') || Login_TextBox.Text.Contains(" "))
+                if (Password_TextBox.Text.Contains(' ') || Login_TextBox.Text.Contains(' '))
                 {
                     MessageBox.Show("В полях Логин и (или) Пароль не могут быть пробелы!");
                     return;

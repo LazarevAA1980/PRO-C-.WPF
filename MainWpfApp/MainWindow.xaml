@@ -42,9 +42,14 @@
                Grid.Row="0" 
                HorizontalAlignment="Center"
                VerticalAlignment="Center"
-               Content="Личный кабинет">
-            
-        </Label> 
-           
+               Content="Личный кабинет"/>
+        <Label x:Name="LoginName_Label"
+               Grid.Column="1"
+               Grid.Row="0" 
+               HorizontalAlignment="Right"
+               VerticalAlignment="Center"
+               />
+
+
     </Grid>
 </Window>
