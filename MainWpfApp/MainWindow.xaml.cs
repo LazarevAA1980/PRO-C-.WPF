@@ -29,7 +29,8 @@ namespace MainWpfApp
             Loaded += MainWindow_Loaded;
 
             LoginName_Label.Visibility = Visibility.Visible;
-            SignIn_Button.Visibility = Visibility.Hidden;
+            SignIn_Button.Visibility = Visibility.Collapsed;
+            //SignIn_Button.Visibility = Visibility.Hidden;
             SignOut_Button.Visibility = Visibility.Visible;
             Registration_Button.Visibility = Visibility.Visible;
             PersonalDesk_Label.Visibility = Visibility.Visible;
@@ -51,11 +52,11 @@ namespace MainWpfApp
         private void SignOut_Button_Click(object sender, RoutedEventArgs e)
         {
             userStorage.SignOut();
-            LoginName_Label.Visibility = Visibility.Hidden;
+            LoginName_Label.Visibility = Visibility.Collapsed;
             SignIn_Button.Visibility = Visibility.Visible;
-            SignOut_Button.Visibility = Visibility.Hidden;
+            SignOut_Button.Visibility = Visibility.Collapsed;
             Registration_Button.Visibility = Visibility.Visible;
-            PersonalDesk_Label.Visibility = Visibility.Hidden;
+            PersonalDesk_Label.Visibility = Visibility.Collapsed;
         }
 
         private void Registration_Button_Click(object sender, RoutedEventArgs e)
@@ -91,11 +92,11 @@ namespace MainWpfApp
 
         private void UnAuthorizeUser()
         {
-            LoginName_Label.Visibility = Visibility.Hidden;
+            LoginName_Label.Visibility = Visibility.Collapsed;
             SignIn_Button.Visibility = Visibility.Visible;
-            SignOut_Button.Visibility = Visibility.Hidden;
+            SignOut_Button.Visibility = Visibility.Collapsed;
             Registration_Button.Visibility = Visibility.Visible;
-            PersonalDesk_Label.Visibility = Visibility.Hidden;
+            PersonalDesk_Label.Visibility = Visibility.Collapsed    ;
         }
 
         private void AuthorizeUser(User user)
@@ -103,9 +104,9 @@ namespace MainWpfApp
             user.LastSignIn = true;
             LoginName_Label.Content = user.Login;
             LoginName_Label.Visibility = Visibility.Visible;
-            SignIn_Button.Visibility = Visibility.Hidden;
+            SignIn_Button.Visibility = Visibility.Collapsed;
             SignOut_Button.Visibility = Visibility.Visible;
-            Registration_Button.Visibility = Visibility.Hidden;
+            Registration_Button.Visibility = Visibility.Collapsed;
             PersonalDesk_Label.Visibility = Visibility.Visible;
         }
     }

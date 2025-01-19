@@ -24,25 +24,30 @@
             Grid.Column="2"
             Grid.Row="0"
             Content="Выйти"
+            Visibility="Collapsed"
             />
         <Button 
             x:Name="SignIn_Button"
             Grid.Column="2"
-            Grid.Row="1"
+            Grid.Row="0"
             Content="Войти"
+            Visibility="Collapsed"
             />
         <Button
             x:Name="Registration_Button"
             Grid.Column="3" 
-            Grid.Row="1" 
-            Content="Регистрация" 
+            Grid.Row="0" 
+            Content="Регистрация"
+            Visibility="Collapsed"
             />
         <Label x:Name="PersonalDesk_Label"
                Grid.Column="3"
                Grid.Row="0" 
                HorizontalAlignment="Center"
                VerticalAlignment="Center"
-               Content="Личный кабинет"/>
+               Content="Личный кабинет"
+               Visibility="Collapsed"
+               />
         <Label x:Name="LoginName_Label"
                Grid.Column="1"
                Grid.Row="0" 
