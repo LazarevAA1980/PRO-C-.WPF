@@ -18,12 +18,6 @@ namespace MainWpfApp
     /// </summary>
     public partial class MainWindow : Window
     {
-        public class Employee
-        {
-            public string FirstName { get; set; }
-            public string LastName { get; set; }
-            public int EmployeeId { get; set; }
-        }
 
         private UserStorage userStorage {  get; } = new UserStorage();
         public MainWindow()
@@ -39,25 +33,10 @@ namespace MainWpfApp
             SignOut_Button.Visibility = Visibility.Visible;
             Registration_Button.Visibility = Visibility.Visible;
             PersonalDesk_Label.Visibility = Visibility.Visible;
-
         }
 
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
-            //var employee = new Employee
-            //{
-            //    FirstName = "Vasya",
-            //    LastName = "Pupkin",
-            //    EmployeeId = 1234
-            //};
-            //string json = JsonSerializer.Serialize(employee);
-
-            //FileProvider.Save(employee, "Users.json");
-
-
-            //Employee deserializedEmployee = FileProvider.Load<Employee>("Users.json"); 
-            //JsonSerializer.Deserialize<Employee>(json);
-
             var signInUser = userStorage.GetSignInUser();
             if (signInUser != null)
             {
@@ -90,12 +69,15 @@ namespace MainWpfApp
         private void CheckUser()
         {
             var user = userStorage.GetSignInUser();
+
             if (user != null)
             {
+
                 AuthorizeUser(user);
             }
             else
             {
+
                 UnAuthorizeUser();
             }
         }
@@ -104,6 +86,7 @@ namespace MainWpfApp
         {
             var authorization = new AuthorizationWindow();
             authorization.ShowDialog();
+            CheckUser();
         }
 
         private void UnAuthorizeUser()
@@ -117,6 +100,7 @@ namespace MainWpfApp
 
         private void AuthorizeUser(User user)
         {
+            user.LastSignIn = true;
             LoginName_Label.Content = user.Login;
             LoginName_Label.Visibility = Visibility.Visible;
             SignIn_Button.Visibility = Visibility.Hidden;

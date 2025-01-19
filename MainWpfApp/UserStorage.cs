@@ -22,10 +22,21 @@ namespace Authorization
 
         public void Add(User user)
         {
-            //var users = new List<User>();
             var users = GetAllUsers();
             users.Add(user);
             FileProvider.Save(users, fileName);
+        }
+
+        public void SignInUser(User user)
+        {
+            if (user != null)
+            {
+                var users = GetAllUsers();
+                var existingUser = users.FirstOrDefault(x => x.Login == user.Login && x.Password == user.Password);
+                existingUser.IsSignIn = true;
+                FileProvider.Save(users, fileName);
+            }
+
         }
 
         public void SignOut()
@@ -39,5 +50,18 @@ namespace Authorization
                 FileProvider.Save(users, fileName);
             }
         }
+
+        public User GetLastSignInUser()
+        {
+            var users = GetAllUsers();
+            return users.FirstOrDefault(x => x.LastSignIn);
+        }
+
+        public User GetExistingUser(string login)
+        {
+            var users = GetAllUsers();
+            return users.FirstOrDefault(x => x.Login == login);
+        }
+
     }
 }

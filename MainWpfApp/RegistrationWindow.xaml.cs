@@ -55,35 +55,14 @@ namespace MainWpfApp
                 return;
             }
 
-            var registeredUser = new User();// inputLogin, inputPassword);
+            var registeredUser = new User();
             registeredUser.Login = inputLogin;
             registeredUser.Password = inputPassword;
             registeredUser.IsSignIn = true;
+            registeredUser.LastSignIn = false;
             userStorage.Add(registeredUser);
             MessageBox.Show("Аккаунт успешно зарегистрирован!");
             Close();
-
         }
     }
 }
-
-//namespace Authorization
-//{
-//    public static class FileProvider
-//    {
-//        public static void Save(object data, string fileName)
-//        { 
-//        string serializedData = JsonSerializer.Serialize(data);
-
-//            if (File.Exists(fileName))
-//            {
-//                File.WriteAllText(fileName, serializedData);
-//            }
-//            else 
-//            {
-//                File.Create(fileName).Close();
-//                File.WriteAllText(fileName, serializedData);
-//        }
-//    }
-
-//}
