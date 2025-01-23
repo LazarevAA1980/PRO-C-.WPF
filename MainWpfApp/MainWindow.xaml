@@ -7,54 +7,111 @@
         mc:Ignorable="d"
         Title="Новое приложение
         " Height="450" Width="800">
+    <Window.Resources>
+        <Style x:Key="LeftPanelButton" TargetType="Button">
+            <Setter Property="Margin" Value="11"></Setter>
+            <Setter Property="Height" Value="62"></Setter>
+            <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
+        </Style>
+    </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"></RowDefinition>
             <RowDefinition Height="1*"></RowDefinition>
             <RowDefinition Height="8*"></RowDefinition>
         </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="4*"></ColumnDefinition>
-            <ColumnDefinition Width="3*"></ColumnDefinition>
-            <ColumnDefinition Width="1*"></ColumnDefinition>
-            <ColumnDefinition Width="2*"></ColumnDefinition>
-        </Grid.ColumnDefinitions>
-        <Button 
-            x:Name="SignOut_Button"
-            Grid.Column="2"
-            Grid.Row="0"
-            Content="Выйти"
-            Visibility="Collapsed"
-            />
-        <Button 
-            x:Name="SignIn_Button"
-            Grid.Column="2"
-            Grid.Row="0"
-            Content="Войти"
-            Visibility="Collapsed"
-            />
-        <Button
-            x:Name="Registration_Button"
-            Grid.Column="3" 
-            Grid.Row="0" 
-            Content="Регистрация"
-            Visibility="Collapsed"
-            />
-        <Label x:Name="PersonalDesk_Label"
-               Grid.Column="3"
-               Grid.Row="0" 
-               HorizontalAlignment="Center"
-               VerticalAlignment="Center"
-               Content="Личный кабинет"
-               Visibility="Collapsed"
-               />
-        <Label x:Name="LoginName_Label"
-               Grid.Column="1"
-               Grid.Row="0" 
-               HorizontalAlignment="Right"
-               VerticalAlignment="Center"
-               />
 
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="4*"></ColumnDefinition>
+                <ColumnDefinition Width="3*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button 
+                x:Name="SignOut_Button"
+                Grid.Column="2"
+                Grid.Row="0"
+                Content="Выйти"
+                Visibility="Collapsed"
+                />
+            <Button 
+                x:Name="SignIn_Button"
+                Grid.Column="2"
+                Grid.Row="0"
+                Content="Войти"
+                Visibility="Collapsed"
+                />
+            <Button
+                x:Name="Registration_Button"
+                Grid.Column="3" 
+                Grid.Row="0" 
+                Content="Регистрация"
+                Visibility="Collapsed"
+                />
+            <Label x:Name="PersonalDesk_Label"
+                    Grid.Column="3"
+                    Grid.Row="0" 
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Content="Личный кабинет"
+                    Visibility="Collapsed"
+                    />
+            <Label x:Name="LoginName_Label"
+                    Grid.Column="1"
+                    Grid.Row="0" 
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Center"
+                    />
+        </Grid>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+                <ColumnDefinition Width="10*"></ColumnDefinition>
+                
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0" Orientation="Vertical">
+                <Button Content="Home" Style="{StaticResource LeftPanelButton}"/>
+                <Button Content="Location" Style="{StaticResource LeftPanelButton}"/>
+                <Button Content="Settings" Style="{StaticResource LeftPanelButton}"/>
+                <Button Content="Close" Style="{StaticResource LeftPanelButton}"/>
+            </StackPanel>
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="8*"></RowDefinition>
+                    <RowDefinition Height="3*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel x:Name="Details_StackPanel">
+                        <Label Content="{Binding Path=Date}"/>
+                        <Label Content="{Binding Path=MaxTemperature}"/>
+                        <Label Content="{Binding Path=MinTemperature}"/>
+                    </StackPanel>
+                </Grid>
 
+                <ListBox Grid.Row="1" x:Name="WeatherDays_ListBox">
+                    <ListBox.ItemsPanel >
+                        <ItemsPanelTemplate>
+                            <StackPanel Orientation="Horizontal"/>
+                        </ItemsPanelTemplate>
+                    </ListBox.ItemsPanel>
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Button Click="WeatherDayButton_Click">
+                                <StackPanel Orientation="Vertical">
+                                    <Label Content="{Binding Path=Date}"/>
+                                    <Label Content="{Binding Path=MaxTemperature}"/>
+                                    <Label Content="{Binding Path=MinTemperature}"/>
+                                </StackPanel>
+                            </Button>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </Grid>
+        </Grid>
     </Grid>
 </Window>

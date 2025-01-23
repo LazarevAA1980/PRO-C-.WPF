@@ -34,6 +34,35 @@ namespace MainWpfApp
             SignOut_Button.Visibility = Visibility.Visible;
             Registration_Button.Visibility = Visibility.Visible;
             PersonalDesk_Label.Visibility = Visibility.Visible;
+
+            var data = new DayForecastModel()
+            { 
+                Date = DateTime.Now,
+                MaxTemperature = 33,
+                MinTemperature = 10,
+            };
+
+            var data1 = new DayForecastModel()
+            {
+                Date = DateTime.Now,
+                MaxTemperature = 50,
+                MinTemperature = 22,
+            };
+
+
+            WeatherDays_ListBox.ItemsSource = new List<DayForecastModel>()
+            {
+                data, data1, data,
+            };
+        }
+
+        private void WeatherDayButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (sender is Button button)
+            {
+                var day = button.DataContext as DayForecastModel;
+                Details_StackPanel.DataContext = day;
+            }
         }
 
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)

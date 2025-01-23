@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>MainWpfApp</id>
+    <version>1.0.0</version>
+    <authors>MainWpfApp</authors>
+    <description>Package Description</description>
+    <repository type="git" commit="d2f00aad764ff81b5647bd7376a3d931d7a1883f" />
+    <dependencies>
+      <group targetFramework="net9.0-windows7.0" />
+    </dependencies>
+    <frameworkReferences>
+      <group targetFramework="net9.0-windows7.0">
+        <frameworkReference name="Microsoft.WindowsDesktop.App.WPF" />
+      </group>
+    </frameworkReferences>
+  </metadata>
+  <files>
+    <file src="D:\education\CSharp\PRO_CSharp.WPF\PRO-C-.WPF\MainWpfApp\bin\Debug\net9.0-windows7.0\MainWpfApp.runtimeconfig.json" target="lib\net9.0-windows7.0\MainWpfApp.runtimeconfig.json" />
+    <file src="D:\education\CSharp\PRO_CSharp.WPF\PRO-C-.WPF\MainWpfApp\bin\Debug\net9.0-windows7.0\MainWpfApp.dll" target="lib\net9.0-windows7.0\MainWpfApp.dll" />
+  </files>
+</package>
