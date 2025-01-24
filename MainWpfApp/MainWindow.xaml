@@ -96,7 +96,7 @@
                 <ListBox Grid.Row="1" x:Name="WeatherDays_ListBox">
                     <ListBox.ItemsPanel >
                         <ItemsPanelTemplate>
-                            <StackPanel Orientation="Horizontal"/>
+                            <StackPanel Orientation="Horizontal" />
                         </ItemsPanelTemplate>
                     </ListBox.ItemsPanel>
                     <ListBox.ItemTemplate>

@@ -10,8 +10,15 @@ namespace MainWpfApp
     {
         public DateTime Date {  get; set; }
 
-        public float MaxTemperature { get; set; }
+        public float? MaxTemperature { get; set; }
 
-        public float MinTemperature { get; set; }
+        public float? MinTemperature { get; set; }
+        
+        public DayForecastModel(DateTime date)
+        {
+            Date = date;
+            MaxTemperature = null;
+            MinTemperature = null;
+        }
     }
 }

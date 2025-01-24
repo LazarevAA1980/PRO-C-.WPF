@@ -35,24 +35,30 @@ namespace MainWpfApp
             Registration_Button.Visibility = Visibility.Visible;
             PersonalDesk_Label.Visibility = Visibility.Visible;
 
-            var data = new DayForecastModel()
-            { 
-                Date = DateTime.Now,
-                MaxTemperature = 33,
-                MinTemperature = 10,
-            };
+            //var data = new DayForecastModel()
+            //{ 
+            //    Date = DateTime.Now,
+            //    MaxTemperature = 33,
+            //    MinTemperature = 10,
+            //};
 
-            var data1 = new DayForecastModel()
-            {
-                Date = DateTime.Now,
-                MaxTemperature = 50,
-                MinTemperature = 22,
-            };
+            //var data1 = new DayForecastModel()
+            //{
+            //    Date = DateTime.Today.AddDays(-24),
+            //    MaxTemperature = 50,
+            //    MinTemperature = 22,
+            //};
 
 
             WeatherDays_ListBox.ItemsSource = new List<DayForecastModel>()
             {
-                data, data1, data,
+                new DayForecastModel(DateTime.Today.AddDays(-3)),
+                new DayForecastModel(DateTime.Today.AddDays(-2)),
+                new DayForecastModel(DateTime.Today.AddDays(-1)),
+                new DayForecastModel(DateTime.Today),
+                new DayForecastModel(DateTime.Today.AddDays(1)),
+                new DayForecastModel(DateTime.Today.AddDays(2)),
+                new DayForecastModel(DateTime.Today.AddDays(3)),
             };
         }
 
