@@ -8,21 +8,17 @@ namespace MainWpfApp
 {
     public class DayForecastModel
     {
-        public DateTime Date {  get; set; }
+        public DateTime Date { get; set; }
         public DayOfWeek WeekDay { get; set; }
         public float? MaxTemperature { get; set; }
         public float? MinTemperature { get; set; }
         public float? Pressure { get; set; }
-        public int? WindDirection { get; set; }
+        public WindDirectionEnum? WindDirection { get; set; }
+        public WeatherCodesEnum? Weather { get; set; }
         public float? WindSpeed { get; set; }
         public string? Location { get; set; }
-        public string? Weather {  get; set; }
 
-
-
-
-
-
+        public List<HourlyForecastModel> hourlyForecasts = new List<HourlyForecastModel>();
 
         public DayForecastModel(DateTime date, DayOfWeek dayOfWeek)
         {
@@ -31,10 +27,28 @@ namespace MainWpfApp
             MaxTemperature = null;
             MinTemperature = null;
             Pressure = null;
-            WindDirection = null;
             WindSpeed = null;
             Location = string.Empty;
-            Weather = string.Empty;
-    }
+        }
+
+        public enum WeatherCodesEnum
+        {
+            ClearSky = 0,
+            Windy = 1,
+            Overcast = 2,
+            Fog = 3,
+            SlightRain = 4,
+            HeavyRain = 5,
+            Snowfall = 6,
+            Thunderstorm = 7
+        }
+
+        public enum WindDirectionEnum
+        {
+            West = 0,
+            East = 1,
+            Nord = 2,
+            Sud = 3
+        }
     }
 }
