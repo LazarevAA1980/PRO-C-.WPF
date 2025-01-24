@@ -52,13 +52,13 @@ namespace MainWpfApp
 
             WeatherDays_ListBox.ItemsSource = new List<DayForecastModel>()
             {
-                new DayForecastModel(DateTime.Today.AddDays(-3)),
-                new DayForecastModel(DateTime.Today.AddDays(-2)),
-                new DayForecastModel(DateTime.Today.AddDays(-1)),
-                new DayForecastModel(DateTime.Today),
-                new DayForecastModel(DateTime.Today.AddDays(1)),
-                new DayForecastModel(DateTime.Today.AddDays(2)),
-                new DayForecastModel(DateTime.Today.AddDays(3)),
+                new DayForecastModel(DateTime.Today.AddDays(-3), DateTime.Today.DayOfWeek),
+                new DayForecastModel(DateTime.Today.AddDays(-2), DateTime.Today.AddDays(-2).DayOfWeek),
+                new DayForecastModel(DateTime.Today.AddDays(-1), DateTime.Today.AddDays(-1).DayOfWeek),
+                new DayForecastModel(DateTime.Today, DateTime.Today.DayOfWeek),
+                new DayForecastModel(DateTime.Today.AddDays(1), DateTime.Today.AddDays(1).DayOfWeek),
+                new DayForecastModel(DateTime.Today.AddDays(2), DateTime.Today.AddDays(2).DayOfWeek),
+                new DayForecastModel(DateTime.Today.AddDays(3), DateTime.Today.AddDays(3).DayOfWeek),
             };
         }
 
