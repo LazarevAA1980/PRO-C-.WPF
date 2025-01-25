@@ -35,21 +35,6 @@ namespace MainWpfApp
             Registration_Button.Visibility = Visibility.Visible;
             PersonalDesk_Label.Visibility = Visibility.Visible;
 
-            //var data = new DayForecastModel()
-            //{ 
-            //    Date = DateTime.Now,
-            //    MaxTemperature = 33,
-            //    MinTemperature = 10,
-            //};
-
-            //var data1 = new DayForecastModel()
-            //{
-            //    Date = DateTime.Today.AddDays(-24),
-            //    MaxTemperature = 50,
-            //    MinTemperature = 22,
-            //};
-
-
             WeatherDays_ListBox.ItemsSource = new List<DayForecastModel>()
             {
                 new DayForecastModel(DateTime.Today.AddDays(-3), DateTime.Today.DayOfWeek),
@@ -60,6 +45,8 @@ namespace MainWpfApp
                 new DayForecastModel(DateTime.Today.AddDays(2), DateTime.Today.AddDays(2).DayOfWeek),
                 new DayForecastModel(DateTime.Today.AddDays(3), DateTime.Today.AddDays(3).DayOfWeek),
             };
+
+            ForecastPeriod.Content = $"Прогноз погоды с {DateTime.Today.AddDays(-3):M} по {DateTime.Today.AddDays(3):M}";
         }
 
         private void WeatherDayButton_Click(object sender, RoutedEventArgs e)
@@ -74,6 +61,7 @@ namespace MainWpfApp
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
             var signInUser = userStorage.GetSignInUser();
+
             if (signInUser != null)
             {
                 AuthorizeUser(signInUser);
