@@ -7,21 +7,33 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="AuthorizationWindow.xaml.cs">
+    <Compile Update="Views\Auth\AuthorizationWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="RegistrationWindow.xaml.cs">
+    <Compile Update="Views\Home\DayForecastDetailView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Home\HomeView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Auth\RegistrationWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="AuthorizationWindow.xaml">
+    <Page Update="Views\Auth\AuthorizationWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Home\DayForecastDetailView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Home\HomeView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="RegistrationWindow.xaml">
+    <Page Update="Views\Auth\RegistrationWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

@@ -1,6 +1,8 @@
 ﻿
 
-FD:\education\CSharp\PRO_CSharp.WPF\PRO-C-.WPF\MainWpfApp\AuthorizationWindow.xaml;;
 FD:\education\CSharp\PRO_CSharp.WPF\PRO-C-.WPF\MainWpfApp\MainWindow.xaml;;
-FD:\education\CSharp\PRO_CSharp.WPF\PRO-C-.WPF\MainWpfApp\RegistrationWindow.xaml;;
+FD:\education\CSharp\PRO_CSharp.WPF\PRO-C-.WPF\MainWpfApp\Views\Auth\AuthorizationWindow.xaml;;
+FD:\education\CSharp\PRO_CSharp.WPF\PRO-C-.WPF\MainWpfApp\Views\Auth\RegistrationWindow.xaml;;
+FD:\education\CSharp\PRO_CSharp.WPF\PRO-C-.WPF\MainWpfApp\Views\Home\HomeView.xaml;;
+FD:\education\CSharp\PRO_CSharp.WPF\PRO-C-.WPF\MainWpfApp\Views\Home\DayForecastDetailView.xaml;;
 

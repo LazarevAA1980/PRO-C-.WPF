@@ -1,4 +1,9 @@
 ﻿using Authorization;
+using MainWpfApp.Models;
+using MainWpfApp.Views.Home;
+using MainWpfApp.Views.Auth;
+using MainWpfApp.ViewModels;
+using MainWpfApp.Storages;
 using System.Text;
 using System.Text.Json;
 using System.Windows;
@@ -35,28 +40,29 @@ namespace MainWpfApp
             Registration_Button.Visibility = Visibility.Visible;
             PersonalDesk_Label.Visibility = Visibility.Visible;
 
-            WeatherDays_ListBox.ItemsSource = new List<DayForecastModel>()
-            {
-                new DayForecastModel(DateTime.Today.AddDays(-3), DateTime.Today.DayOfWeek),
-                new DayForecastModel(DateTime.Today.AddDays(-2), DateTime.Today.AddDays(-2).DayOfWeek),
-                new DayForecastModel(DateTime.Today.AddDays(-1), DateTime.Today.AddDays(-1).DayOfWeek),
-                new DayForecastModel(DateTime.Today, DateTime.Today.DayOfWeek),
-                new DayForecastModel(DateTime.Today.AddDays(1), DateTime.Today.AddDays(1).DayOfWeek),
-                new DayForecastModel(DateTime.Today.AddDays(2), DateTime.Today.AddDays(2).DayOfWeek),
-                new DayForecastModel(DateTime.Today.AddDays(3), DateTime.Today.AddDays(3).DayOfWeek),
-            };
+            //WeatherDays_ListBox.ItemsSource = new List<DayForecastModel>()
+            //{
+            //    new DayForecastModel(DateTime.Today.AddDays(-3), DateTime.Today.DayOfWeek),
+            //    new DayForecastModel(DateTime.Today.AddDays(-2), DateTime.Today.AddDays(-2).DayOfWeek),
+            //    new DayForecastModel(DateTime.Today.AddDays(-1), DateTime.Today.AddDays(-1).DayOfWeek),
+            //    new DayForecastModel(DateTime.Today, DateTime.Today.DayOfWeek),
+            //    new DayForecastModel(DateTime.Today.AddDays(1), DateTime.Today.AddDays(1).DayOfWeek),
+            //    new DayForecastModel(DateTime.Today.AddDays(2), DateTime.Today.AddDays(2).DayOfWeek),
+            //    new DayForecastModel(DateTime.Today.AddDays(3), DateTime.Today.AddDays(3).DayOfWeek),
+            //};
 
-            ForecastPeriod.Content = $"Прогноз погоды с {DateTime.Today.AddDays(-3):M} по {DateTime.Today.AddDays(3):M}";
+            ForecastPeriod.Content = $"Прогноз погоды с {DateTime.Today.AddDays(-3).ToString("MMMM dd")} по {DateTime.Today.AddDays(3).ToString("MMMM dd")}";
         }
 
-        private void WeatherDayButton_Click(object sender, RoutedEventArgs e)
-        {
-            if (sender is Button button)
-            {
-                var day = button.DataContext as DayForecastModel;
-                Details_StackPanel.DataContext = day;
-            }
-        }
+        //private void WeatherDayButton_Click(object sender, RoutedEventArgs e)
+        //{
+        //    if (sender is Button button)
+        //    {
+        //        var day = button.DataContext as DayForecastModel;
+        //        Details_StackPanel.DataContext = day;
+        //        HourlyForecast_ListBox.ItemsSource = day.HourlyForecasts;
+        //    }
+        //}
 
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
