@@ -22,9 +22,12 @@
             </Grid.RowDefinitions>
             <Grid Grid.Row="0" Grid.Column="0">
                 <local:DayForecastDetailView DataContext="{Binding SelectedDay}"/>
-
             </Grid>
-            <ListBox Grid.Row="0" Grid.Column="1" x:Name="HourlyForecast_ListBox" Grid.ColumnSpan="2">
+            <!--<Grid Grid.Row="0" Grid.Column="1">
+                
+            </Grid>-->
+            <ListBox Grid.Row="0" Grid.Column="1" x:Name="HourlyForecast_ListBox" Grid.ColumnSpan="2"
+                     ItemsSource="{Binding SelectedDay.HourlyForecasts}">
                     <ListBox.ItemsPanel >
                         <ItemsPanelTemplate>
                             <StackPanel Orientation="Vertical" />
@@ -32,13 +35,10 @@
                     </ListBox.ItemsPanel>
                     <ListBox.ItemTemplate>
                         <DataTemplate>
-                            <Button>
-                                <!--Click="WeatherDayButton_Click">-->
-                                <StackPanel Orientation="Vertical">
-                                    <Label Content="{Binding Path=Time}"/>
-                                    <Label Content="{Binding Path=ApparentTemperature}"/>
-                                </StackPanel>
-                            </Button>
+                            <StackPanel Orientation="Vertical">
+                                <Label Content="{Binding Path=Time}"/>
+                                <Label Content="{Binding Path=ApparentTemperature}"/>
+                            </StackPanel>
                         </DataTemplate>
                     </ListBox.ItemTemplate>
                 </ListBox>
@@ -53,15 +53,13 @@
                 </ListBox.ItemsPanel>
                 <ListBox.ItemTemplate>
                     <DataTemplate>
-                       
-                            <StackPanel Orientation="Vertical">
-                                <Label Content="{Binding Path=Date}"/>
-                                <Label Content="{Binding Path=WeekDay}"/>
-                                <Label Content="{Binding Path=MaxTemperature}"/>
-                                <Label Content="{Binding Path=MinTemperature}"/>
-                                <Label Content="{Binding Path=Weather}"/>
-                            </StackPanel>
-
+                        <StackPanel Orientation="Vertical">
+                            <Label Content="{Binding Path=Date}"/>
+                            <Label Content="{Binding Path=WeekDay}"/>
+                            <Label Content="{Binding Path=MaxTemperature}"/>
+                            <Label Content="{Binding Path=MinTemperature}"/>
+                            <Label Content="{Binding Path=Weather}"/>
+                        </StackPanel>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>
