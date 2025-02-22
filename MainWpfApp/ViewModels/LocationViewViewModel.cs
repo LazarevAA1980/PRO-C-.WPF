@@ -9,22 +9,12 @@ using System.Threading.Tasks;
 
 namespace MainWpfApp.ViewModels
 {
-    public class LocationViewViewModel : INotifyPropertyChanged
+    public class LocationViewViewModel : ViewModelBase
     {
 
         public LocationViewViewModel()
         {
             
         }
-
-        public void OnPropertyChanged([CallerMemberName] string prop = "")
-        {
-            if (PropertyChanged != null)
-            {
-                PropertyChanged(this, new PropertyChangedEventArgs(prop));
-            }
-        }
-
-        public event PropertyChangedEventHandler? PropertyChanged;
     }
 }

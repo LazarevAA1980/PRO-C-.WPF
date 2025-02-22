@@ -16,6 +16,14 @@
             <Setter Property="Height" Value="62"></Setter>
             <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
         </Style>
+        <DataTemplate DataType="{x:Type vm:HomeViewViewModel}">
+            <homeView:HomeView DataContext="{Binding}"/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type vm:LocationViewViewModel}">
+            <locationView:LocationView DataContext="{Binding}"/>
+        </DataTemplate>
+        
     </Window.Resources>
     <Window.DataContext>
         <vm:MainWindowViewModel/>
@@ -86,15 +94,17 @@
                         Style="{StaticResource LeftPanelButton}"/>
                 <Button Content="Location"
                         Command ="{Binding Path=LocationCommand}"
-                        CommandParameter="{Binding Path=SomeObject}"
                         Style="{StaticResource LeftPanelButton}"/>
                 <Button Content="Settings" Style="{StaticResource LeftPanelButton}"/>
                 <Button Content="Close" Style="{StaticResource LeftPanelButton}"/>
             </StackPanel>
    <!--Здесь нужно вставить домашнее окно-->
             <Grid Grid.Column="1">
-                <homeView:HomeView DataContext="{Binding HomeViewViewModel}"/>
-                <!--<locationView:LocationView DataContext="{Binding LocationViewViewModel}"/>-->
+                <!--<homeView:HomeView DataContext="{Binding HomeViewViewModel}"/>
+                <locationView:LocationView DataContext="{Binding LocationViewViewModel}"/>-->
+                <ContentControl Content="{Binding SelectedContent}">
+                    
+                </ContentControl>
             </Grid>
         </Grid>
     </Grid>

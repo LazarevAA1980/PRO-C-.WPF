@@ -1,45 +1,20 @@
-﻿using MainWpfApp.Views.Home;
-using System;
-using System.CodeDom.Compiler;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Reflection.Metadata;
-using System.Resources;
-using System.Runtime.CompilerServices;
-using System.Security.Claims;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Controls.Primitives;
-using System.Windows.Input;
+﻿using System.Windows.Input;
 //using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace MainWpfApp.ViewModels
 {
-    public class MainWindowViewModel : INotifyPropertyChanged
+    public class MainWindowViewModel : ViewModelBase
     {
-        public event PropertyChangedEventHandler? PropertyChanged;
         public ICommand HomeCommand { get; set; }
         public ICommand LocationCommand { get; set; }
 
-        private HomeViewViewModel homeViewViewModel;
-        public HomeViewViewModel HomeViewViewModel
+        private ViewModelBase selectedContent;
+        public ViewModelBase SelectedContent
         {
-            get { return homeViewViewModel; }
+            get { return selectedContent; }
             set
             {
-                homeViewViewModel = value;
-                OnPropertyChanged();
-            }
-        }
-
-        private LocationViewViewModel locationViewViewModel;
-        public LocationViewViewModel LocationViewViewModel
-        {
-            get { return locationViewViewModel; }
-            set
-            {
-                locationViewViewModel = value;
+                selectedContent = value;
                 OnPropertyChanged();
             }
         }
@@ -57,7 +32,7 @@ namespace MainWpfApp.ViewModels
 
         private void OpenLocationView(object obj)
         {
-             LocationViewViewModel = new LocationViewViewModel();
+            SelectedContent = new LocationViewViewModel();
         }
 
         private bool CanOpenHomeView(object arg)
@@ -67,13 +42,7 @@ namespace MainWpfApp.ViewModels
 
         private void OpenHomeView(object obj)
         {
-            HomeViewViewModel = new HomeViewViewModel();
-        }
-
-        public void OnPropertyChanged([CallerMemberName] string prop = "")
-        {
-            if (PropertyChanged != null)
-                PropertyChanged(this, new PropertyChangedEventArgs(prop));
+            SelectedContent = new HomeViewViewModel();
         }
     }
 

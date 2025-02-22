@@ -23,7 +23,6 @@ namespace MainWpfApp.Views.Location
         public LocationView()
         {
             InitializeComponent();
-            LocationSetting.Content = $"Страница настроек локаций";
         }
     }
 }

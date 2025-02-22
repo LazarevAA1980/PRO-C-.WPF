@@ -1,9 +1,7 @@
 ﻿using MainWpfApp.Models;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
-using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -11,7 +9,7 @@ using System.Windows.Navigation;
 
 namespace MainWpfApp.ViewModels
 {
-    public class HomeViewViewModel : INotifyPropertyChanged
+    public class HomeViewViewModel : ViewModelBase
     {
         private List<DayForecastModel> forecastDays;
 
@@ -24,17 +22,6 @@ namespace MainWpfApp.ViewModels
                 OnPropertyChanged();
             }
         }
-
-        //private bool isControlVisible;
-        //public bool IsControlVisible
-        //{
-        //    get { return isControlVisible; }
-        //    set
-        //    {
-        //        isControlVisible = value;
-        //        OnPropertyChanged(nameof(IsControlVisible));
-        //    }
-        //}
 
         private DayForecastModel selectedDay;
 
@@ -52,15 +39,5 @@ namespace MainWpfApp.ViewModels
         { 
             ForecastDays = WeatherDataStorage.GetAll();
         }
-
-        public void OnPropertyChanged([CallerMemberName] string prop = "")
-        {
-            if (PropertyChanged != null)
-            {
-                PropertyChanged(this, new PropertyChangedEventArgs(prop));
-            }
-        }
-
-        public event PropertyChangedEventHandler? PropertyChanged;
     }
 }
