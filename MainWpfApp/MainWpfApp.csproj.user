@@ -25,6 +25,9 @@
     <Compile Update="Views\Location\LocationView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\Settings\SettingsView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="Views\Auth\AuthorizationWindow.xaml">
@@ -46,6 +49,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\Location\LocationView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Settings\SettingsView.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

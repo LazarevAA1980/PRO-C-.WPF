@@ -7,7 +7,9 @@ namespace MainWpfApp.ViewModels
     {
         public ICommand HomeCommand { get; set; }
         public ICommand LocationCommand { get; set; }
+        public ICommand SettingsCommand { get; set; }
 
+        
         private ViewModelBase selectedContent;
         public ViewModelBase SelectedContent
         {
@@ -23,6 +25,16 @@ namespace MainWpfApp.ViewModels
         {
             HomeCommand = new RelayCommand(OpenHomeView, CanOpenHomeView);
             LocationCommand = new RelayCommand(OpenLocationView, CanOpenLocationView);
+            SettingsCommand = new RelayCommand(OpenSettingsView, CanOpenSettingsView);
+        }
+        private bool CanOpenSettingsView(object arg)
+        {
+            return true;
+        }
+
+        private void OpenSettingsView(object obj)
+        {
+            SelectedContent = new SettingsViewViewModel();
         }
 
         private bool CanOpenLocationView(object arg)

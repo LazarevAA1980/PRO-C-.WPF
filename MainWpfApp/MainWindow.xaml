@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:homeView="clr-namespace:MainWpfApp.Views.Home"
         xmlns:locationView="clr-namespace:MainWpfApp.Views.Location"
+        xmlns:settingsView="clr-namespace:MainWpfApp.Views.Settings"
         xmlns:vm="clr-namespace:MainWpfApp.ViewModels"
         xmlns:local="clr-namespace:MainWpfApp"
         mc:Ignorable="d"
@@ -23,7 +24,11 @@
         <DataTemplate DataType="{x:Type vm:LocationViewViewModel}">
             <locationView:LocationView DataContext="{Binding}"/>
         </DataTemplate>
-        
+
+        <DataTemplate DataType="{x:Type vm:SettingsViewViewModel}">
+            <settingsView:SettingsView DataContext="{Binding}"/>
+        </DataTemplate>
+
     </Window.Resources>
     <Window.DataContext>
         <vm:MainWindowViewModel/>
@@ -95,16 +100,15 @@
                 <Button Content="Location"
                         Command ="{Binding Path=LocationCommand}"
                         Style="{StaticResource LeftPanelButton}"/>
-                <Button Content="Settings" Style="{StaticResource LeftPanelButton}"/>
-                <Button Content="Close" Style="{StaticResource LeftPanelButton}"/>
+                <Button Content="Settings" 
+                        Command ="{Binding Path=SettingsCommand}"
+                        Style="{StaticResource LeftPanelButton}"/>
+                <Button Content="Close" 
+                        Style="{StaticResource LeftPanelButton}"/>
             </StackPanel>
    <!--Здесь нужно вставить домашнее окно-->
             <Grid Grid.Column="1">
-                <!--<homeView:HomeView DataContext="{Binding HomeViewViewModel}"/>
-                <locationView:LocationView DataContext="{Binding LocationViewViewModel}"/>-->
-                <ContentControl Content="{Binding SelectedContent}">
-                    
-                </ContentControl>
+                <ContentControl Content="{Binding SelectedContent}"/>
             </Grid>
         </Grid>
     </Grid>
