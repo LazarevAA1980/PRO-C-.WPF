@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:homeView="clr-namespace:MainWpfApp.Views.Home"
+        xmlns:locationView="clr-namespace:MainWpfApp.Views.Location"
         xmlns:vm="clr-namespace:MainWpfApp.ViewModels"
         xmlns:local="clr-namespace:MainWpfApp"
         mc:Ignorable="d"
@@ -60,21 +61,18 @@
                     HorizontalAlignment="Center"
                     VerticalAlignment="Center"
                     Content="Личный кабинет"
-                    Visibility="Collapsed"
-                    />
+                    Visibility="Collapsed"/>
             <Label x:Name="LoginName_Label"
                     Grid.Column="1"
                     Grid.Row="0" 
                     HorizontalAlignment="Right"
-                    VerticalAlignment="Center"
-                    />
+                    VerticalAlignment="Center"/>
         </Grid>
         <Grid Grid.Row="1">
 
             <Label x:Name="ForecastPeriod"
                    HorizontalAlignment="Right"
-                   Margin="0,0,10,0"
-                   />
+                   Margin="0,0,10,0"/>
         </Grid>
         <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>
@@ -86,13 +84,17 @@
                 <Button Content="Home" 
                         Command="{Binding Path=HomeCommand}"
                         Style="{StaticResource LeftPanelButton}"/>
-                <Button Content="Location" Style="{StaticResource LeftPanelButton}"/>
+                <Button Content="Location"
+                        Command ="{Binding Path=LocationCommand}"
+                        CommandParameter="{Binding Path=SomeObject}"
+                        Style="{StaticResource LeftPanelButton}"/>
                 <Button Content="Settings" Style="{StaticResource LeftPanelButton}"/>
                 <Button Content="Close" Style="{StaticResource LeftPanelButton}"/>
             </StackPanel>
    <!--Здесь нужно вставить домашнее окно-->
             <Grid Grid.Column="1">
                 <homeView:HomeView DataContext="{Binding HomeViewViewModel}"/>
+                <!--<locationView:LocationView DataContext="{Binding LocationViewViewModel}"/>-->
             </Grid>
         </Grid>
     </Grid>

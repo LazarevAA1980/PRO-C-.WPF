@@ -1,18 +1,26 @@
-﻿using System;
+﻿using MainWpfApp.Views.Home;
+using System;
+using System.CodeDom.Compiler;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Reflection.Metadata;
+using System.Resources;
 using System.Runtime.CompilerServices;
+using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls.Primitives;
 using System.Windows.Input;
+//using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace MainWpfApp.ViewModels
 {
     public class MainWindowViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler? PropertyChanged;
-        public ICommand HomeCommand { get; }
+        public ICommand HomeCommand { get; set; }
+        public ICommand LocationCommand { get; set; }
 
         private HomeViewViewModel homeViewViewModel;
         public HomeViewViewModel HomeViewViewModel
@@ -24,12 +32,35 @@ namespace MainWpfApp.ViewModels
                 OnPropertyChanged();
             }
         }
+
+        private LocationViewViewModel locationViewViewModel;
+        public LocationViewViewModel LocationViewViewModel
+        {
+            get { return locationViewViewModel; }
+            set
+            {
+                locationViewViewModel = value;
+                OnPropertyChanged();
+            }
+        }
+
         public MainWindowViewModel()
         {
             HomeCommand = new RelayCommand(OpenHomeView, CanOpenHomeView);
+            LocationCommand = new RelayCommand(OpenLocationView, CanOpenLocationView);
         }
 
-        private bool CanOpenHomeView( object arg)
+        private bool CanOpenLocationView(object arg)
+        {
+            return true;
+        }
+
+        private void OpenLocationView(object obj)
+        {
+             LocationViewViewModel = new LocationViewViewModel();
+        }
+
+        private bool CanOpenHomeView(object arg)
         {
             return true;
         }
@@ -45,4 +76,5 @@ namespace MainWpfApp.ViewModels
                 PropertyChanged(this, new PropertyChangedEventArgs(prop));
         }
     }
+
 }

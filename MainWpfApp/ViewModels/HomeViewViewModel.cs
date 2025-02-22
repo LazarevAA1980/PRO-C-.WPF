@@ -25,6 +25,17 @@ namespace MainWpfApp.ViewModels
             }
         }
 
+        //private bool isControlVisible;
+        //public bool IsControlVisible
+        //{
+        //    get { return isControlVisible; }
+        //    set
+        //    {
+        //        isControlVisible = value;
+        //        OnPropertyChanged(nameof(IsControlVisible));
+        //    }
+        //}
+
         private DayForecastModel selectedDay;
 
         public DayForecastModel SelectedDay

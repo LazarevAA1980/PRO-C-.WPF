@@ -28,3 +28,7 @@ D:\education\CSharp\PRO_CSharp.WPF\PRO-C-.WPF\MainWpfApp\obj\Debug\net9.0-window
 D:\education\CSharp\PRO_CSharp.WPF\PRO-C-.WPF\MainWpfApp\obj\Debug\net9.0-windows7.0\Views\Home\HomeView.baml
 D:\education\CSharp\PRO_CSharp.WPF\PRO-C-.WPF\MainWpfApp\obj\Debug\net9.0-windows7.0\Views\Home\DayForecastDetailView.g.cs
 D:\education\CSharp\PRO_CSharp.WPF\PRO-C-.WPF\MainWpfApp\obj\Debug\net9.0-windows7.0\Views\Home\DayForecastDetailView.baml
+D:\education\CSharp\PRO_CSharp.WPF\PRO-C-.WPF\MainWpfApp\obj\Debug\net9.0-windows7.0\Views\Location\LocationView.g.cs
+D:\education\CSharp\PRO_CSharp.WPF\PRO-C-.WPF\MainWpfApp\obj\Debug\net9.0-windows7.0\Views\Location\LocationView.baml
+D:\education\CSharp\PRO_CSharp.WPF\PRO-C-.WPF\MainWpfApp\obj\Debug\net9.0-windows7.0\Views\Home\HourlyForecastDetailsView.g.cs
+D:\education\CSharp\PRO_CSharp.WPF\PRO-C-.WPF\MainWpfApp\obj\Debug\net9.0-windows7.0\Views\Home\HourlyForecastDetailsView.baml
