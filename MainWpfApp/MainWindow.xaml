@@ -6,6 +6,7 @@
         xmlns:homeView="clr-namespace:MainWpfApp.Views.Home"
         xmlns:locationView="clr-namespace:MainWpfApp.Views.Location"
         xmlns:settingsView="clr-namespace:MainWpfApp.Views.Settings"
+        xmlns:closeView="clr-namespace:MainWpfApp.Views.Close"
         xmlns:vm="clr-namespace:MainWpfApp.ViewModels"
         xmlns:local="clr-namespace:MainWpfApp"
         mc:Ignorable="d"
@@ -29,6 +30,10 @@
             <settingsView:SettingsView DataContext="{Binding}"/>
         </DataTemplate>
 
+        <DataTemplate DataType="{x:Type vm:CloseViewViewModel}">
+            <closeView:CloseView DataContext="{Binding}"/>
+        </DataTemplate>
+        
     </Window.Resources>
     <Window.DataContext>
         <vm:MainWindowViewModel/>
@@ -104,6 +109,7 @@
                         Command ="{Binding Path=SettingsCommand}"
                         Style="{StaticResource LeftPanelButton}"/>
                 <Button Content="Close" 
+                        Command ="{Binding Path=CloseCommand}"
                         Style="{StaticResource LeftPanelButton}"/>
             </StackPanel>
    <!--Здесь нужно вставить домашнее окно-->

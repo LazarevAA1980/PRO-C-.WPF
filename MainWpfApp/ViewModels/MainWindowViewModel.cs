@@ -8,8 +8,9 @@ namespace MainWpfApp.ViewModels
         public ICommand HomeCommand { get; set; }
         public ICommand LocationCommand { get; set; }
         public ICommand SettingsCommand { get; set; }
+        public ICommand CloseCommand { get; set; }
 
-        
+
         private ViewModelBase selectedContent;
         public ViewModelBase SelectedContent
         {
@@ -26,7 +27,19 @@ namespace MainWpfApp.ViewModels
             HomeCommand = new RelayCommand(OpenHomeView, CanOpenHomeView);
             LocationCommand = new RelayCommand(OpenLocationView, CanOpenLocationView);
             SettingsCommand = new RelayCommand(OpenSettingsView, CanOpenSettingsView);
+            CloseCommand = new RelayCommand(OpenCloseView, CanOpenCloseView);
         }
+
+        private bool CanOpenCloseView(object arg)
+        {
+            return true;
+        }
+
+        private void OpenCloseView(object obj)
+        {
+            SelectedContent = new CloseViewViewModel();
+        }
+
         private bool CanOpenSettingsView(object arg)
         {
             return true;
