@@ -61,7 +61,7 @@ namespace MainWpfApp.Views.Home {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/MainWpfApp;component/views/home/dayforecastdetailview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/MainWpfApp;V1.0.0.0;component/views/home/dayforecastdetailview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\Views\Home\DayForecastDetailView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
