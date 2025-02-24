@@ -6,7 +6,6 @@
         xmlns:homeView="clr-namespace:MainWpfApp.Views.Home"
         xmlns:locationView="clr-namespace:MainWpfApp.Views.Location"
         xmlns:settingsView="clr-namespace:MainWpfApp.Views.Settings"
-        xmlns:closeView="clr-namespace:MainWpfApp.Views.Close"
         xmlns:vm="clr-namespace:MainWpfApp.ViewModels"
         xmlns:local="clr-namespace:MainWpfApp"
         mc:Ignorable="d"
@@ -30,15 +29,15 @@
             <settingsView:SettingsView DataContext="{Binding}"/>
         </DataTemplate>
 
-        <DataTemplate DataType="{x:Type vm:CloseViewViewModel}">
+        <!--<DataTemplate DataType="{x:Type vm:CloseViewViewModel}">
             <closeView:CloseView DataContext="{Binding}"/>
-        </DataTemplate>
+        </DataTemplate>-->
         
     </Window.Resources>
     <Window.DataContext>
         <vm:MainWindowViewModel/>
     </Window.DataContext>
-    <Grid>
+    <Grid Background="{DynamicResource MainWindowBackground}">
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"></RowDefinition>
             <RowDefinition Height="1*"></RowDefinition>

@@ -1,4 +1,5 @@
-﻿using System.Windows.Input;
+﻿using System.Windows;
+using System.Windows.Input;
 //using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace MainWpfApp.ViewModels
@@ -37,7 +38,7 @@ namespace MainWpfApp.ViewModels
 
         private void OpenCloseView(object obj)
         {
-            SelectedContent = new CloseViewViewModel();
+            Application.Current.MainWindow.Close();
         }
 
         private bool CanOpenSettingsView(object arg)

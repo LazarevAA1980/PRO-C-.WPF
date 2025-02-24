@@ -10,9 +10,6 @@
     <Compile Update="Views\Auth\AuthorizationWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\Close\CloseView.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Update="Views\Home\DayForecastDetailView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -33,10 +30,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="Views\Auth\AuthorizationWindow.xaml">
+    <Page Update="Resources\Themes\ColorThemes.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\Close\CloseView.xaml">
+    <Page Update="Views\Auth\AuthorizationWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\Home\DayForecastDetailView.xaml">
