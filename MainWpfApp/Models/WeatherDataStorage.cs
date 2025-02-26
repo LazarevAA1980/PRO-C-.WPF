@@ -12,6 +12,7 @@ namespace MainWpfApp.Models
         {
             var weather = new List<DayForecastModel>();
             var random = new Random();
+            var values = Enum.GetValues(typeof(WeatherCodes));
 
             for (int i = -3; i <= 3; i++)
             {
@@ -23,7 +24,7 @@ namespace MainWpfApp.Models
                     Pressure = random.Next(100, 300),
                     WindSpeed = random.Next(0, 25),
                     WindDirection = DayForecastModel.WindDirectionEnum.West,
-                    Weather = DayForecastModel.WeatherCodesEnum.Windy,
+                    Weather = (WeatherCodes)values.GetValue(random.Next(values.Length)),
                     HourlyForecasts = GetHourlyForecast()
                 };
 

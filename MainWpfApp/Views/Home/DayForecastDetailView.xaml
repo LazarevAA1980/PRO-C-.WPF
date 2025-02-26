@@ -9,7 +9,7 @@
     <Grid>
         <StackPanel x:Name="Details_StackPanel">
             <Label Content="{Binding Path=Location}"/>
-            <Label Content="{Binding Path=Weather}"/>
+            <Control Template="{Binding Weather, Converter={StaticResource WeatherCodeToIconConverter}}"/>
             <Label Content="{Binding Path=Date}"/>
             <Label Content="{Binding Path=WeekDay}"/>
             <Label Content="{Binding Path=MaxTemperature}"/>

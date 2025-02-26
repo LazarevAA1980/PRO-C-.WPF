@@ -12,7 +12,7 @@ namespace MainWpfApp.Models
         public float? MaxTemperature { get; set; }
         public float? MinTemperature { get; set; }
         public string? Location { get; set; }
-        public WeatherCodesEnum? Weather { get; set; }
+        public WeatherCodes Weather { get; set; }
         public DayOfWeek WeekDay { get; set; }
         public float? Pressure { get; set; }
         public float? WindSpeed { get; set; }
