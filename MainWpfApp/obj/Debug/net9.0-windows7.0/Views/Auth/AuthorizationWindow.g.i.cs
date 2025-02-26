@@ -85,7 +85,7 @@ namespace MainWpfApp.Views.Auth {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/MainWpfApp;V1.0.0.0;component/views/auth/authorizationwindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/MainWpfApp;component/views/auth/authorizationwindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\Views\Auth\AuthorizationWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

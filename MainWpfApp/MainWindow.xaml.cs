@@ -25,6 +25,7 @@ namespace MainWpfApp
     {
 
         private UserStorage userStorage {  get; } = new UserStorage();
+        private System.Timers.Timer timer = new System.Timers.Timer();
         public MainWindow()
         {
             InitializeComponent();
@@ -52,6 +53,39 @@ namespace MainWpfApp
             //};
 
             ForecastPeriod.Content = $"Прогноз погоды с {DateTime.Today.AddDays(-3).ToString("MMMM dd")} по {DateTime.Today.AddDays(3).ToString("MMMM dd")}";
+            timer.Interval = 1000;
+            timer.Elapsed += Timer_Elapsed;
+            timer.Start();
+        }
+
+        private void Timer_Elapsed(object? sender, System.Timers.ElapsedEventArgs e)
+        {
+            var hour = DateTime.Now.Hour;
+            LinearGradientBrush gradient;
+
+            if (hour >= 6 && hour <= 18)
+            { 
+            gradient = new LinearGradientBrush 
+                { 
+                    GradientStops = new GradientStopCollection 
+                    {
+                        new GradientStop((Color)ColorConverter.ConvertFromString("#FFC371"),0),
+                        new GradientStop((Color)ColorConverter.ConvertFromString("#FF5F6D"),1)
+                    }
+                };
+            }
+            else
+            {
+                gradient = new LinearGradientBrush
+                {
+                    GradientStops = new GradientStopCollection
+                    { 
+                    new GradientStop(Colors.Blue,1),
+                    new GradientStop(Colors.Black,0),
+                    }
+                };
+            }
+            Application.Current.Resources["MainWindowBackground"] = gradient;
         }
 
         //private void WeatherDayButton_Click(object sender, RoutedEventArgs e)

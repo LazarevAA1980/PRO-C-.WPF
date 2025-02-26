@@ -54,7 +54,7 @@ namespace MainWpfApp.Views.Settings {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/MainWpfApp;V1.0.0.0;component/views/settings/settingsview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/MainWpfApp;component/views/settings/settingsview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\Views\Settings\SettingsView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
