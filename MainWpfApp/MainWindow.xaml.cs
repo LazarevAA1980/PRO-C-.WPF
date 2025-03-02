@@ -41,17 +41,6 @@ namespace MainWpfApp
             Registration_Button.Visibility = Visibility.Visible;
             PersonalDesk_Label.Visibility = Visibility.Visible;
 
-            //WeatherDays_ListBox.ItemsSource = new List<DayForecastModel>()
-            //{
-            //    new DayForecastModel(DateTime.Today.AddDays(-3), DateTime.Today.DayOfWeek),
-            //    new DayForecastModel(DateTime.Today.AddDays(-2), DateTime.Today.AddDays(-2).DayOfWeek),
-            //    new DayForecastModel(DateTime.Today.AddDays(-1), DateTime.Today.AddDays(-1).DayOfWeek),
-            //    new DayForecastModel(DateTime.Today, DateTime.Today.DayOfWeek),
-            //    new DayForecastModel(DateTime.Today.AddDays(1), DateTime.Today.AddDays(1).DayOfWeek),
-            //    new DayForecastModel(DateTime.Today.AddDays(2), DateTime.Today.AddDays(2).DayOfWeek),
-            //    new DayForecastModel(DateTime.Today.AddDays(3), DateTime.Today.AddDays(3).DayOfWeek),
-            //};
-
             ForecastPeriod.Content = $"Прогноз погоды с {DateTime.Today.AddDays(-3).ToString("MMMM dd")} по {DateTime.Today.AddDays(3).ToString("MMMM dd")}";
             timer.Interval = 1000;
             timer.Elapsed += Timer_Elapsed;

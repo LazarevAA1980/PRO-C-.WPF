@@ -36,3 +36,5 @@ D:\education\CSharp\PRO_CSharp.WPF\PRO-C-.WPF\MainWpfApp\obj\Debug\net9.0-window
 D:\education\CSharp\PRO_CSharp.WPF\PRO-C-.WPF\MainWpfApp\obj\Debug\net9.0-windows7.0\Views\Settings\SettingsView.baml
 D:\education\CSharp\PRO_CSharp.WPF\PRO-C-.WPF\MainWpfApp\obj\Debug\net9.0-windows7.0\Resources\Themes\ColorThemes.baml
 D:\education\CSharp\PRO_CSharp.WPF\PRO-C-.WPF\MainWpfApp\obj\Debug\net9.0-windows7.0\App.baml
+D:\education\CSharp\PRO_CSharp.WPF\PRO-C-.WPF\MainWpfApp\obj\Debug\net9.0-windows7.0\Resources\Icons\WeatherIcons.baml
+D:\education\CSharp\PRO_CSharp.WPF\PRO-C-.WPF\MainWpfApp\obj\Debug\net9.0-windows7.0\Resources\Styles\ButtonsStyles.baml

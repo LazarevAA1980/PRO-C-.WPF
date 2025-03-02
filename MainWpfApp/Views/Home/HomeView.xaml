@@ -26,26 +26,8 @@
             </Grid>
             <Grid Grid.Row="0" Grid.Column="1">
                 <local:HourlyForecastDetailsView DataContext="{Binding SelectedDay}" />
-                <!--<local:HourlyForecastDetailsView DataContext="{Binding SelectedDay}"/>-->
             </Grid>
                 
-            <!--<ListBox Grid.Row="0" Grid.Column="1" x:Name="HourlyForecast_ListBox" Grid.ColumnSpan="2"
-                     ItemsSource="{Binding SelectedDay.HourlyForecasts}">
-                    <ListBox.ItemsPanel >
-                        <ItemsPanelTemplate>
-                            <StackPanel Orientation="Vertical" />
-                        </ItemsPanelTemplate>
-                    </ListBox.ItemsPanel>
-                    <ListBox.ItemTemplate>
-                        <DataTemplate>
-                            <StackPanel Orientation="Vertical">
-                                <Label Content="{Binding Path=Time}"/>
-                                <Label Content="{Binding Path=ApparentTemperature}"/>
-                            </StackPanel>
-                        </DataTemplate>
-                    </ListBox.ItemTemplate>
-                </ListBox>-->
-       
             <ListBox Grid.Row="1" x:Name="WeatherDays_ListBox" Grid.ColumnSpan="2"
                      ItemsSource="{Binding ForecastDays}"
                      SelectedItem="{Binding SelectedDay}">

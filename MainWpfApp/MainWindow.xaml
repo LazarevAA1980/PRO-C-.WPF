@@ -12,11 +12,6 @@
         Title="Новое приложение
         " Height="450" Width="800">
     <Window.Resources>
-        <Style x:Key="LeftPanelButton" TargetType="Button">
-            <Setter Property="Margin" Value="11"></Setter>
-            <Setter Property="Height" Value="62"></Setter>
-            <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
-        </Style>
         <DataTemplate DataType="{x:Type vm:HomeViewViewModel}">
             <homeView:HomeView DataContext="{Binding}"/>
         </DataTemplate>
@@ -28,11 +23,6 @@
         <DataTemplate DataType="{x:Type vm:SettingsViewViewModel}">
             <settingsView:SettingsView DataContext="{Binding}"/>
         </DataTemplate>
-
-        <!--<DataTemplate DataType="{x:Type vm:CloseViewViewModel}">
-            <closeView:CloseView DataContext="{Binding}"/>
-        </DataTemplate>-->
-        
     </Window.Resources>
     <Window.DataContext>
         <vm:MainWindowViewModel/>

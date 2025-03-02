@@ -25,7 +25,7 @@
             ModerateRain = 20,
             SlightSnowfall = 21,
             ModerateSnowfall = 22,
-            SnowGrains = 23,
+            //SnowGrains = 23,
             HeavySnowfall = 24,
             SlightRainShowers = 25,
             ModerateRainShowers = 26,

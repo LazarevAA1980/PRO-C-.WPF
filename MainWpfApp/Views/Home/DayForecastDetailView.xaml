@@ -3,11 +3,19 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:models="clr-namespace:MainWpfApp.Models"
              xmlns:local="clr-namespace:MainWpfApp.Views.Home"
+             xmlns:converter="clr-namespace:MainWpfApp.Resources.Converters"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.DataContext>
+        <models:DayForecastModel/>
+    </UserControl.DataContext>
+    <UserControl.Resources>
+        <converter:WeatherCodeToIconConverter x:Key="WeatherCodeToIconConverter"/>
+    </UserControl.Resources>
     <Grid>
-        <StackPanel x:Name="Details_StackPanel">
+        <StackPanel x:Name="Details_StackPanel" Orientation="Vertical" VerticalAlignment="Center">
             <Label Content="{Binding Path=Location}"/>
             <Control Template="{Binding Weather, Converter={StaticResource WeatherCodeToIconConverter}}"/>
             <Label Content="{Binding Path=Date}"/>
