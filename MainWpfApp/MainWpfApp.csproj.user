@@ -30,6 +30,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="Resources\Controls\ControlProperties.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Resources\Icons\WeatherIcons.xaml">
       <SubType>Designer</SubType>
     </Page>
