@@ -23,7 +23,7 @@ namespace MainWpfApp.Models
                     MaxTemperature = random.Next(10, 28),
                     Pressure = random.Next(100, 300),
                     WindSpeed = random.Next(0, 25),
-                    WindDirection = DayForecastModel.WindDirectionEnum.West,
+                    WindDirection = WindDirectionCodes.West,
                     Weather = (WeatherCodes)values.GetValue(random.Next(values.Length)),
                     HourlyForecasts = GetHourlyForecast()
                 };

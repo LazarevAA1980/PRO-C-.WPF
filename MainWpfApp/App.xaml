@@ -9,7 +9,7 @@
                 <ResourceDictionary Source="Resources/Themes/ColorThemes.xaml"/>
                 <ResourceDictionary Source="Resources/Icons/WeatherIcons.xaml"/>
                 <ResourceDictionary Source="Resources/Styles/ButtonsStyles.xaml"/>
-                <ResourceDictionary Source="Resources/Controls/ControlProperties.xaml"
+                <ResourceDictionary Source="Resources/Controls/ControlProperties.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>
